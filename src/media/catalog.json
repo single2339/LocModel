@@ -1,0 +1,909 @@
+[
+  {
+    "id": "qwen-image-2.1",
+    "name": "Qwen-Image 2.1",
+    "org": "阿里 Qwen",
+    "desc": "最新版：画质和图里的中英文字都比上一代更好，体积小一半，还能一句话改图、生成透明背景 PNG",
+    "released": "2026年9月发布",
+    "repo": "leejet/Qwen-Image-2.1-GGUF",
+    "quants": [
+      {
+        "quant": "Q3_K",
+        "file": "qwen_image_2.1-Q3_K.gguf",
+        "high_file": "",
+        "size": 3240000000,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K",
+        "file": "qwen_image_2.1-Q4_K.gguf",
+        "high_file": "",
+        "size": 4160000000,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "qwen_image_2.1-Q6_K.gguf",
+        "high_file": "",
+        "size": 5950000000,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "qwen_image_2.1-Q8_0.gguf",
+        "high_file": "",
+        "size": 7640000000,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "Qwen/Qwen3-VL-8B-Instruct-GGUF",
+        "file": "Qwen3VL-8B-Instruct-Q4_K_M.gguf",
+        "size": 5000000000
+      },
+      {
+        "role": "llm_vision",
+        "repo": "Qwen/Qwen3-VL-8B-Instruct-GGUF",
+        "file": "mmproj-Qwen3VL-8B-Instruct-F16.gguf",
+        "size": 1150000000
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/Qwen-Image-2.1",
+        "file": "vae/qwen_image_2.1_vae_bf16.safetensors",
+        "size": 0
+      }
+    ],
+    "sampler": "euler",
+    "kind": "image",
+    "args": [],
+    "steps": 20,
+    "cfg": 6.0,
+    "flow_shift": 0.0,
+    "width": 1024,
+    "height": 1024,
+    "frames": 1,
+    "fps": 0,
+    "refs": 0,
+    "i2v": false,
+    "edit": true,
+    "edit_only": false,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "z-image-turbo",
+    "name": "Z-Image Turbo",
+    "org": "阿里通义",
+    "desc": "速度快，8 步出图，中文提示词友好，4 GB 显存也能跑",
+    "released": "2025年11月发布",
+    "repo": "leejet/Z-Image-Turbo-GGUF",
+    "quants": [
+      {
+        "quant": "Q3_K",
+        "file": "z_image_turbo-Q3_K.gguf",
+        "high_file": "",
+        "size": 3143559104,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K",
+        "file": "z_image_turbo-Q4_K.gguf",
+        "high_file": "",
+        "size": 3864250304,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "z_image_turbo-Q6_K.gguf",
+        "high_file": "",
+        "size": 5263239104,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "z_image_turbo-Q8_0.gguf",
+        "high_file": "",
+        "size": 6577440704,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+        "file": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+        "size": 2497281120
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/z_image_turbo",
+        "file": "split_files/vae/ae.safetensors",
+        "size": 335304388
+      }
+    ],
+    "sampler": "euler",
+    "kind": "image",
+    "args": [],
+    "steps": 8,
+    "cfg": 1.0,
+    "flow_shift": 0.0,
+    "width": 1024,
+    "height": 1024,
+    "frames": 1,
+    "fps": 0,
+    "refs": 0,
+    "i2v": false,
+    "edit": false,
+    "edit_only": false,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "qwen-image",
+    "name": "Qwen-Image",
+    "org": "阿里 Qwen",
+    "desc": "画面里的中文、英文文字最准，适合海报、封面、带字的图",
+    "released": "2025年8月发布",
+    "repo": "QuantStack/Qwen-Image-GGUF",
+    "quants": [
+      {
+        "quant": "Q2_K",
+        "file": "Qwen_Image-Q2_K.gguf",
+        "high_file": "",
+        "size": 7062518304,
+        "high_size": 0
+      },
+      {
+        "quant": "Q3_K_M",
+        "file": "Qwen_Image-Q3_K_M.gguf",
+        "high_file": "",
+        "size": 9679567392,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K_M",
+        "file": "Qwen_Image-Q4_K_M.gguf",
+        "high_file": "",
+        "size": 13065746976,
+        "high_size": 0
+      },
+      {
+        "quant": "Q5_K_M",
+        "file": "Qwen_Image-Q5_K_M.gguf",
+        "high_file": "",
+        "size": 14934899232,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "Qwen_Image-Q6_K.gguf",
+        "high_file": "",
+        "size": 16824990240,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "Qwen_Image-Q8_0.gguf",
+        "high_file": "",
+        "size": 21761817120,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "mradermacher/Qwen2.5-VL-7B-Instruct-GGUF",
+        "file": "Qwen2.5-VL-7B-Instruct.Q4_K_M.gguf",
+        "size": 4683072512
+      },
+      {
+        "role": "vae",
+        "repo": "QuantStack/Qwen-Image-GGUF",
+        "file": "VAE/Qwen_Image-VAE.safetensors",
+        "size": 253806246
+      }
+    ],
+    "sampler": "euler",
+    "kind": "image",
+    "args": [],
+    "steps": 20,
+    "cfg": 2.5,
+    "flow_shift": 3.0,
+    "width": 1024,
+    "height": 1024,
+    "frames": 1,
+    "fps": 0,
+    "refs": 0,
+    "i2v": false,
+    "edit": false,
+    "edit_only": false,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "flux1-schnell",
+    "name": "FLUX.1 schnell",
+    "org": "Black Forest Labs",
+    "desc": "画质标杆，4 步出图，写实照片和插画都很强（英文提示词效果最好）",
+    "released": "2024年8月发布",
+    "repo": "leejet/FLUX.1-schnell-gguf",
+    "quants": [
+      {
+        "quant": "Q3_K",
+        "file": "flux1-schnell-q3_k.gguf",
+        "high_file": "",
+        "size": 5312873376,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K",
+        "file": "flux1-schnell-q4_k.gguf",
+        "high_file": "",
+        "size": 6884606880,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "flux1-schnell-q8_0.gguf",
+        "high_file": "",
+        "size": 12801721248,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "clip_l",
+        "repo": "comfyanonymous/flux_text_encoders",
+        "file": "clip_l.safetensors",
+        "size": 246144152
+      },
+      {
+        "role": "t5xxl",
+        "repo": "comfyanonymous/flux_text_encoders",
+        "file": "t5xxl_fp16.safetensors",
+        "size": 9787841024
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/z_image_turbo",
+        "file": "split_files/vae/ae.safetensors",
+        "size": 335304388
+      }
+    ],
+    "sampler": "euler",
+    "kind": "image",
+    "args": [],
+    "steps": 4,
+    "cfg": 1.0,
+    "flow_shift": 0.0,
+    "width": 1024,
+    "height": 1024,
+    "frames": 1,
+    "fps": 0,
+    "refs": 0,
+    "i2v": false,
+    "edit": false,
+    "edit_only": false,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "flux2-klein-4b",
+    "name": "FLUX.2 klein 4B",
+    "org": "Black Forest Labs",
+    "desc": "又小又快，4 步出图；还能按一句话改图：换背景、改颜色、加减东西，8 GB 显存可用",
+    "released": "2026年1月发布",
+    "repo": "leejet/FLUX.2-klein-4B-GGUF",
+    "quants": [
+      {
+        "quant": "Q4_0",
+        "file": "flux-2-klein-4b-Q4_0.gguf",
+        "high_file": "",
+        "size": 2460378560,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "flux-2-klein-4b-Q8_0.gguf",
+        "high_file": "",
+        "size": 4300629440,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "unsloth/Qwen3-4B-GGUF",
+        "file": "Qwen3-4B-Q4_K_M.gguf",
+        "size": 2497281312
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/flux2-klein-4B",
+        "file": "split_files/vae/flux2-vae.safetensors",
+        "size": 336211292
+      }
+    ],
+    "sampler": "euler",
+    "kind": "image",
+    "args": [],
+    "steps": 4,
+    "cfg": 1.0,
+    "flow_shift": 0.0,
+    "width": 1024,
+    "height": 1024,
+    "frames": 1,
+    "fps": 0,
+    "refs": 0,
+    "i2v": false,
+    "edit": true,
+    "edit_only": false,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "qwen-image-edit",
+    "name": "Qwen-Image-Edit 改图",
+    "org": "阿里 Qwen",
+    "desc": "专门改图：一句话换背景、换衣服、改图里的文字，人物长相基本不变，中文指令最准",
+    "released": "2025年12月发布（2511 版）",
+    "repo": "unsloth/Qwen-Image-Edit-2511-GGUF",
+    "quants": [
+      {
+        "quant": "Q2_K",
+        "file": "qwen-image-edit-2511-Q2_K.gguf",
+        "high_file": "",
+        "size": 7468022368,
+        "high_size": 0
+      },
+      {
+        "quant": "Q3_K_M",
+        "file": "qwen-image-edit-2511-Q3_K_M.gguf",
+        "high_file": "",
+        "size": 9920805472,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K_M",
+        "file": "qwen-image-edit-2511-Q4_K_M.gguf",
+        "high_file": "",
+        "size": 13244758624,
+        "high_size": 0
+      },
+      {
+        "quant": "Q5_K_M",
+        "file": "qwen-image-edit-2511-Q5_K_M.gguf",
+        "high_file": "",
+        "size": 15027501664,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "qwen-image-edit-2511-Q6_K.gguf",
+        "high_file": "",
+        "size": 16852417120,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "qwen-image-edit-2511-Q8_0.gguf",
+        "high_file": "",
+        "size": 21761817184,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "mradermacher/Qwen2.5-VL-7B-Instruct-GGUF",
+        "file": "Qwen2.5-VL-7B-Instruct.Q4_K_M.gguf",
+        "size": 4683072512
+      },
+      {
+        "role": "llm_vision",
+        "repo": "mradermacher/Qwen2.5-VL-7B-Instruct-GGUF",
+        "file": "Qwen2.5-VL-7B-Instruct.mmproj-Q8_0.gguf",
+        "size": 853119712
+      },
+      {
+        "role": "vae",
+        "repo": "QuantStack/Qwen-Image-GGUF",
+        "file": "VAE/Qwen_Image-VAE.safetensors",
+        "size": 253806246
+      }
+    ],
+    "sampler": "euler",
+    "kind": "image",
+    "args": [
+      "--model-args",
+      "qwen_image_zero_cond_t=true"
+    ],
+    "steps": 20,
+    "cfg": 2.5,
+    "flow_shift": 3.0,
+    "width": 1024,
+    "height": 1024,
+    "frames": 1,
+    "fps": 0,
+    "refs": 0,
+    "i2v": false,
+    "edit": true,
+    "edit_only": true,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "wan2.1-t2v-1.3b",
+    "name": "Wan2.1 文生视频 1.3B",
+    "org": "阿里通义万相",
+    "desc": "最轻量的视频模型，8 GB 显存就能生成 480P 短视频，适合先体验",
+    "released": "2025年2月发布",
+    "repo": "Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+    "quants": [
+      {
+        "quant": "FP16",
+        "file": "split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors",
+        "high_file": "",
+        "size": 2838303560,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "t5xxl",
+        "repo": "city96/umt5-xxl-encoder-gguf",
+        "file": "umt5-xxl-encoder-Q8_0.gguf",
+        "size": 6043068256
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+        "file": "split_files/vae/wan_2.1_vae.safetensors",
+        "size": 253815318
+      }
+    ],
+    "sampler": "euler",
+    "kind": "video",
+    "args": [],
+    "steps": 20,
+    "cfg": 6.0,
+    "flow_shift": 3.0,
+    "width": 832,
+    "height": 480,
+    "frames": 33,
+    "fps": 16,
+    "refs": 0,
+    "i2v": false,
+    "edit": false,
+    "edit_only": false,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "wan2.2-ti2v-5b",
+    "name": "Wan2.2 视频 5B",
+    "org": "阿里通义万相",
+    "desc": "画质明显更好，支持文字生成视频，也能上传一张图片让它动起来",
+    "released": "2025年7月发布",
+    "repo": "QuantStack/Wan2.2-TI2V-5B-GGUF",
+    "quants": [
+      {
+        "quant": "Q4_K_M",
+        "file": "Wan2.2-TI2V-5B-Q4_K_M.gguf",
+        "high_file": "",
+        "size": 3433116000,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "Wan2.2-TI2V-5B-Q6_K.gguf",
+        "high_file": "",
+        "size": 4211683680,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "Wan2.2-TI2V-5B-Q8_0.gguf",
+        "high_file": "",
+        "size": 5400179040,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "t5xxl",
+        "repo": "city96/umt5-xxl-encoder-gguf",
+        "file": "umt5-xxl-encoder-Q8_0.gguf",
+        "size": 6043068256
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+        "file": "split_files/vae/wan2.2_vae.safetensors",
+        "size": 1409400960
+      }
+    ],
+    "sampler": "euler",
+    "kind": "video",
+    "args": [],
+    "steps": 20,
+    "cfg": 5.0,
+    "flow_shift": 5.0,
+    "width": 832,
+    "height": 480,
+    "frames": 49,
+    "fps": 24,
+    "refs": 0,
+    "i2v": true,
+    "edit": false,
+    "edit_only": false,
+    "hd": true,
+    "audio": false,
+    "end_frame": false
+  },
+  {
+    "id": "ltx-2.3",
+    "name": "LTX-2.3 有声视频",
+    "org": "Lightricks",
+    "desc": "视频和声音一起生成（对白、音效、背景音乐），支持 720P 和图片动起来；蒸馏版 8 步出片，速度快",
+    "released": "2026年",
+    "repo": "unsloth/LTX-2.3-GGUF",
+    "quants": [
+      {
+        "quant": "Q3_K_M",
+        "file": "distilled-1.1/ltx-2.3-22b-distilled-1.1-Q3_K_M.gguf",
+        "high_file": "",
+        "size": 10629508128,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K_M",
+        "file": "distilled-1.1/ltx-2.3-22b-distilled-1.1-Q4_K_M.gguf",
+        "high_file": "",
+        "size": 14194441248,
+        "high_size": 0
+      },
+      {
+        "quant": "Q5_K_M",
+        "file": "distilled-1.1/ltx-2.3-22b-distilled-1.1-Q5_K_M.gguf",
+        "high_file": "",
+        "size": 15930424352,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "distilled-1.1/ltx-2.3-22b-distilled-1.1-Q6_K.gguf",
+        "high_file": "",
+        "size": 17774906400,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "distilled-1.1/ltx-2.3-22b-distilled-1.1-Q8_0.gguf",
+        "high_file": "",
+        "size": 22755540000,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "unsloth/gemma-3-12b-it-qat-GGUF",
+        "file": "gemma-3-12b-it-qat-UD-Q4_K_XL.gguf",
+        "size": 7432229248
+      },
+      {
+        "role": "embeddings-connectors",
+        "repo": "unsloth/LTX-2.3-GGUF",
+        "file": "text_encoders/ltx-2.3-22b-distilled_embeddings_connectors.safetensors",
+        "size": 2312144712
+      },
+      {
+        "role": "vae",
+        "repo": "unsloth/LTX-2.3-GGUF",
+        "file": "vae/ltx-2.3-22b-distilled_video_vae.safetensors",
+        "size": 1452256522
+      },
+      {
+        "role": "audio-vae",
+        "repo": "unsloth/LTX-2.3-GGUF",
+        "file": "vae/ltx-2.3-22b-distilled_audio_vae.safetensors",
+        "size": 364853140
+      }
+    ],
+    "sampler": "euler",
+    "kind": "video",
+    "args": [],
+    "steps": 8,
+    "cfg": 1.0,
+    "flow_shift": 0.0,
+    "width": 832,
+    "height": 480,
+    "frames": 49,
+    "fps": 24,
+    "refs": 0,
+    "i2v": true,
+    "edit": false,
+    "edit_only": false,
+    "hd": true,
+    "audio": true,
+    "end_frame": false
+  },
+  {
+    "id": "minimax-h3",
+    "name": "MiniMax-H3 有声视频",
+    "org": "MiniMax 海螺",
+    "desc": "画面 + 立体声一起生成，人物动作和镜头运动自然，可以上传图片当第一帧；模型很大，建议 24 GB 显存 + 64 GB 内存",
+    "released": "2026年",
+    "repo": "unsloth/MiniMax-H3-GGUF",
+    "quants": [
+      {
+        "quant": "Q2_K",
+        "file": "minimax_h3_fl2va_pruned-Q2_K.gguf",
+        "high_file": "",
+        "size": 6724190304,
+        "high_size": 0
+      },
+      {
+        "quant": "Q3_K",
+        "file": "minimax_h3_fl2va_pruned-Q3_K.gguf",
+        "high_file": "",
+        "size": 8759328864,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K",
+        "file": "minimax_h3_fl2va_pruned-Q4_K.gguf",
+        "high_file": "",
+        "size": 11420663904,
+        "high_size": 0
+      },
+      {
+        "quant": "Q5_0",
+        "file": "minimax_h3_fl2va_pruned-Q5_0.gguf",
+        "high_file": "",
+        "size": 13923170400,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "minimax_h3_fl2va_pruned-Q6_K.gguf",
+        "high_file": "",
+        "size": 16586784864,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "minimax_h3_fl2va_pruned-Q8_0.gguf",
+        "high_file": "",
+        "size": 21437786208,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "unsloth/MiniMax-H3-GGUF",
+        "file": "qwen3vl_32b_minimax_h3-Q4_K_M.gguf",
+        "size": 18218065024
+      },
+      {
+        "role": "vae",
+        "repo": "unsloth/MiniMax-H3-GGUF",
+        "file": "vae/minimax_h3_video_vae_fp16.safetensors",
+        "size": 5207808496
+      },
+      {
+        "role": "audio-vae",
+        "repo": "unsloth/MiniMax-H3-GGUF",
+        "file": "vae/minimax_h3_audio_vae_fp32.safetensors",
+        "size": 605254808
+      }
+    ],
+    "sampler": "euler",
+    "kind": "video",
+    "args": [
+      "--rng",
+      "cpu"
+    ],
+    "steps": 20,
+    "cfg": 1.0,
+    "flow_shift": 12.0,
+    "width": 832,
+    "height": 480,
+    "frames": 56,
+    "fps": 24,
+    "refs": 0,
+    "i2v": true,
+    "edit": false,
+    "edit_only": false,
+    "hd": false,
+    "audio": true,
+    "end_frame": true
+  },
+  {
+    "id": "minimax-h3-ref",
+    "name": "MiniMax-H3 多图参考视频",
+    "org": "MiniMax 海螺",
+    "desc": "上传 1–4 张参考图（人物、商品、场景），生成的视频里会出现它们，同时生成声音。和「MiniMax-H3 有声视频」共用文本编码器和 VAE，已经下过 H3 只需再下主体",
+    "released": "2026年",
+    "repo": "unsloth/MiniMax-H3-GGUF",
+    "quants": [
+      {
+        "quant": "Q2_K",
+        "file": "minimax_h3_ref2va_pruned-Q2_K.gguf",
+        "high_file": "",
+        "size": 6678674145,
+        "high_size": 0
+      },
+      {
+        "quant": "Q3_K",
+        "file": "minimax_h3_ref2va_pruned-Q3_K.gguf",
+        "high_file": "",
+        "size": 8718783610,
+        "high_size": 0
+      },
+      {
+        "quant": "Q4_K",
+        "file": "minimax_h3_ref2va_pruned-Q4_K.gguf",
+        "high_file": "",
+        "size": 11381663334,
+        "high_size": 0
+      },
+      {
+        "quant": "Q5_0",
+        "file": "minimax_h3_ref2va_pruned-Q5_0.gguf",
+        "high_file": "",
+        "size": 13894219202,
+        "high_size": 0
+      },
+      {
+        "quant": "Q6_K",
+        "file": "minimax_h3_ref2va_pruned-Q6_K.gguf",
+        "high_file": "",
+        "size": 16557098926,
+        "high_size": 0
+      },
+      {
+        "quant": "Q8_0",
+        "file": "minimax_h3_ref2va_pruned-Q8_0.gguf",
+        "high_file": "",
+        "size": 21410411970,
+        "high_size": 0
+      }
+    ],
+    "parts": [
+      {
+        "role": "llm",
+        "repo": "unsloth/MiniMax-H3-GGUF",
+        "file": "qwen3vl_32b_minimax_h3-Q4_K_M.gguf",
+        "size": 18218065024
+      },
+      {
+        "role": "vae",
+        "repo": "unsloth/MiniMax-H3-GGUF",
+        "file": "vae/minimax_h3_video_vae_fp16.safetensors",
+        "size": 5207808496
+      },
+      {
+        "role": "audio-vae",
+        "repo": "unsloth/MiniMax-H3-GGUF",
+        "file": "vae/minimax_h3_audio_vae_fp32.safetensors",
+        "size": 605254808
+      }
+    ],
+    "sampler": "euler",
+    "kind": "video",
+    "args": [
+      "--rng",
+      "cpu"
+    ],
+    "steps": 20,
+    "cfg": 1.0,
+    "flow_shift": 12.0,
+    "width": 832,
+    "height": 480,
+    "frames": 56,
+    "fps": 24,
+    "refs": 4,
+    "i2v": false,
+    "edit": false,
+    "edit_only": false,
+    "hd": false,
+    "audio": true,
+    "end_frame": false
+  },
+  {
+    "id": "wan2.2-i2v-a14b",
+    "name": "Wan2.2 图生视频 A14B",
+    "org": "阿里通义万相",
+    "desc": "开源图生视频画质天花板：上传一张图让它动起来，动作幅度大、细节稳定；两个 14B 专家轮流工作，较慢",
+    "released": "2025年7月发布",
+    "repo": "QuantStack/Wan2.2-I2V-A14B-GGUF",
+    "quants": [
+      {
+        "quant": "Q3_K_M",
+        "file": "LowNoise/Wan2.2-I2V-A14B-LowNoise-Q3_K_M.gguf",
+        "high_file": "HighNoise/Wan2.2-I2V-A14B-HighNoise-Q3_K_M.gguf",
+        "size": 7176106496,
+        "high_size": 7176106496
+      },
+      {
+        "quant": "Q4_K_M",
+        "file": "LowNoise/Wan2.2-I2V-A14B-LowNoise-Q4_K_M.gguf",
+        "high_file": "HighNoise/Wan2.2-I2V-A14B-HighNoise-Q4_K_M.gguf",
+        "size": 9651728896,
+        "high_size": 9651728896
+      },
+      {
+        "quant": "Q5_K_M",
+        "file": "LowNoise/Wan2.2-I2V-A14B-LowNoise-Q5_K_M.gguf",
+        "high_file": "HighNoise/Wan2.2-I2V-A14B-HighNoise-Q5_K_M.gguf",
+        "size": 10792055296,
+        "high_size": 10792055296
+      },
+      {
+        "quant": "Q6_K",
+        "file": "LowNoise/Wan2.2-I2V-A14B-LowNoise-Q6_K.gguf",
+        "high_file": "HighNoise/Wan2.2-I2V-A14B-HighNoise-Q6_K.gguf",
+        "size": 12003652096,
+        "high_size": 12003652096
+      },
+      {
+        "quant": "Q8_0",
+        "file": "LowNoise/Wan2.2-I2V-A14B-LowNoise-Q8_0.gguf",
+        "high_file": "HighNoise/Wan2.2-I2V-A14B-HighNoise-Q8_0.gguf",
+        "size": 15406608896,
+        "high_size": 15406608896
+      }
+    ],
+    "parts": [
+      {
+        "role": "t5xxl",
+        "repo": "city96/umt5-xxl-encoder-gguf",
+        "file": "umt5-xxl-encoder-Q8_0.gguf",
+        "size": 6043068256
+      },
+      {
+        "role": "vae",
+        "repo": "Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+        "file": "split_files/vae/wan_2.1_vae.safetensors",
+        "size": 253815318
+      }
+    ],
+    "sampler": "euler",
+    "kind": "video",
+    "args": [
+      "--high-noise-cfg-scale",
+      "3.5",
+      "--high-noise-sampling-method",
+      "euler",
+      "--high-noise-steps",
+      "8"
+    ],
+    "steps": 10,
+    "cfg": 3.5,
+    "flow_shift": 3.0,
+    "width": 832,
+    "height": 480,
+    "frames": 33,
+    "fps": 16,
+    "refs": 0,
+    "i2v": true,
+    "edit": false,
+    "edit_only": true,
+    "hd": false,
+    "audio": false,
+    "end_frame": false
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "productName": "LocModel",
+  "version": "3.1.0",
+  "identifier": "local.locmodel.reconstruction",
+  "build": {
+    "frontendDist": "frontend"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "LocModel · 本地重建版",
+        "width": 1180,
+        "height": 780
+      }
+    ],
+    "security": {
+      "capabilities": [
+        {
+          "identifier": "main-local",
+          "windows": [
+            "main"
+          ],
+          "permissions": [
+            "core:default",
+            "core:window:allow-set-fullscreen"
+          ]
+        }
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ]
+  }
+}

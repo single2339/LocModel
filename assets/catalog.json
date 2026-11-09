@@ -1,0 +1,109 @@
+{
+  "version": 20261027,
+  "models": [
+    {
+      "id": "qwen3.8-flash-next", "name": "Qwen3.8 Flash-Next", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.8-Flash-Next-GGUF", "release": "2026-08",
+      "desc": "Qwen 最新一代 MoE（Qwen4 架构预览），每次只激活 6B，能看图；需要大内存", "tags": ["对话", "编程", "看图", "推理"],
+      "params_b": 180, "active_b": 6, "layers": 48, "kv_layers": 12, "kv_heads": 2, "head_dim": 256,
+      "experts": 512, "experts_used": 10, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL"], "size_gb": { "UD-Q2_K_XL": 52, "UD-Q3_K_XL": 66, "UD-Q4_K_XL": 82 }
+    },
+    {
+      "id": "qwen3.8-27b", "name": "Qwen3.8 27B", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.8-27B-GGUF", "release": "2026-08",
+      "desc": "Qwen 最新稠密模型，综合能力强，能看图，24G 显存流畅", "tags": ["对话", "编程", "看图", "推理"],
+      "params_b": 27, "layers": 64, "kv_layers": 16, "kv_heads": 4, "head_dim": 256, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL", "UD-Q5_K_XL", "UD-Q6_K_XL", "Q8_0"]
+    },
+    {
+      "id": "muse-glimmer-30b", "name": "Muse Glimmer 30B", "org": "Meta · unsloth", "repo": "unsloth/Muse-Glimmer-30B-GGUF", "release": "2026-08",
+      "desc": "Meta 开源（Apache 2.0），擅长工具调用和本地智能体，能看图", "tags": ["对话", "编程", "看图"],
+      "params_b": 30, "layers": 64, "kv_heads": 8, "head_dim": 128, "ctx_max": 131072, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL", "UD-Q6_K_XL", "UD-Q8_K_XL"],
+      "size_gb": { "UD-Q2_K_XL": 11.5, "UD-Q3_K_XL": 13.5, "UD-Q4_K_XL": 16.5, "UD-Q6_K_XL": 21, "UD-Q8_K_XL": 32 }
+    },
+    {
+      "id": "qwen3.6-35b-a3b", "name": "Qwen3.6 35B-A3B", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.6-35B-A3B-GGUF", "release": "2026-04",
+      "desc": "MoE 模型，每次只激活 3B，速度非常快，编程强，能看图", "tags": ["对话", "编程", "看图"],
+      "params_b": 35, "active_b": 3, "layers": 40, "kv_layers": 10, "kv_heads": 2, "head_dim": 256,
+      "experts": 256, "experts_used": 8, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL", "UD-Q5_K_XL", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "qwen3.6-27b", "name": "Qwen3.6 27B", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.6-27B-GGUF", "release": "2026-04",
+      "desc": "稠密模型，长文写作和复杂推理，能看图", "tags": ["对话", "推理", "看图"],
+      "params_b": 27, "layers": 64, "kv_layers": 16, "kv_heads": 4, "head_dim": 256, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL", "UD-Q5_K_XL", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "gemma-4-26b-a4b", "name": "Gemma 4 26B-A4B", "org": "Google · unsloth", "repo": "unsloth/gemma-4-26B-A4B-it-GGUF", "release": "2026-04",
+      "desc": "Google 的 MoE 模型，每次激活 4B，看图和多语言都不错", "tags": ["对话", "看图"],
+      "params_b": 26, "active_b": 4, "layers": 30, "kv_layers": 5, "kv_heads": 8, "head_dim": 256,
+      "experts": 128, "experts_used": 8, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q3_K_XL", "UD-Q4_K_XL", "Q4_K_M", "UD-Q5_K_XL", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "gemma-4-31b", "name": "Gemma 4 31B", "org": "Google · unsloth", "repo": "unsloth/gemma-4-31B-it-GGUF", "release": "2026-04",
+      "desc": "Gemma 4 最大号稠密模型，看图 + 长文", "tags": ["对话", "看图", "推理"],
+      "params_b": 31, "layers": 60, "kv_layers": 10, "kv_heads": 16, "head_dim": 128, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL", "Q4_K_M", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "gemma-4-12b", "name": "Gemma 4 12B", "org": "Google · unsloth", "repo": "unsloth/gemma-4-12b-it-GGUF", "release": "2026-04",
+      "desc": "中等大小，8–12G 显存的甜点，能看图", "tags": ["对话", "看图"],
+      "params_b": 12, "layers": 48, "kv_layers": 8, "kv_heads": 8, "head_dim": 256, "ctx_max": 131072, "vision": true,
+      "quants": ["Q4_K_M", "UD-Q4_K_XL", "Q5_K_M", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "gemma-4-e4b", "name": "Gemma 4 E4B", "org": "Google · unsloth", "repo": "unsloth/gemma-4-E4B-it-GGUF", "release": "2026-04",
+      "desc": "为笔记本和小显存设计，8G 显存或纯 CPU 也能跑，能看图", "tags": ["对话", "看图"],
+      "params_b": 8, "layers": 42, "kv_layers": 7, "kv_heads": 2, "head_dim": 256, "ctx_max": 131072, "vision": true,
+      "quants": ["Q4_K_M", "UD-Q4_K_XL", "Q6_K", "Q8_0"], "size_gb": { "Q4_K_M": 5.0, "UD-Q4_K_XL": 5.1, "Q6_K": 6.4, "Q8_0": 8.2 }
+    },
+    {
+      "id": "qwen3.5-122b-a10b", "name": "Qwen3.5 122B-A10B", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.5-122B-A10B-GGUF", "release": "2026-02",
+      "desc": "大号 MoE，64G 以上内存的电脑能跑，专家放内存", "tags": ["对话", "推理", "编程"],
+      "params_b": 122, "active_b": 10, "layers": 48, "kv_layers": 12, "kv_heads": 2, "head_dim": 256,
+      "experts": 256, "experts_used": 8, "ctx_max": 262144, "vision": true,
+      "quants": ["UD-Q2_K_XL", "UD-Q3_K_XL", "UD-Q4_K_XL"]
+    },
+    {
+      "id": "qwen3.5-9b", "name": "Qwen3.5 9B", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.5-9B-GGUF", "release": "2026-03",
+      "desc": "小巧全能，8G 显存流畅，能看图", "tags": ["对话", "看图"],
+      "params_b": 9, "layers": 32, "kv_layers": 8, "kv_heads": 4, "head_dim": 256, "ctx_max": 262144, "vision": true,
+      "quants": ["Q4_K_M", "UD-Q4_K_XL", "Q5_K_M", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "qwen3.5-4b", "name": "Qwen3.5 4B", "org": "阿里 Qwen · unsloth", "repo": "unsloth/Qwen3.5-4B-GGUF", "release": "2026-03",
+      "desc": "低配电脑和纯 CPU 也能流畅对话", "tags": ["对话"],
+      "params_b": 4, "layers": 32, "kv_layers": 8, "kv_heads": 4, "head_dim": 256, "ctx_max": 262144, "vision": true,
+      "quants": ["Q4_K_M", "Q5_K_M", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "glm-4.7-flash", "name": "GLM-4.7 Flash", "org": "智谱 · unsloth", "repo": "unsloth/GLM-4.7-Flash-GGUF", "release": "2026-01",
+      "desc": "智谱轻量 MoE，编程和智能体任务强", "tags": ["编程", "对话"],
+      "params_b": 30, "active_b": 3, "layers": 47, "kv_heads": 4, "head_dim": 128,
+      "experts": 64, "experts_used": 4, "ctx_max": 131072,
+      "quants": ["UD-Q3_K_XL", "UD-Q4_K_XL", "Q4_K_M", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "devstral-small-2-24b", "name": "Devstral Small 2 24B", "org": "Mistral · unsloth", "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF", "release": "2025-12",
+      "desc": "Mistral 的编程专用模型，写代码、改项目", "tags": ["编程"],
+      "params_b": 24, "layers": 40, "kv_heads": 8, "head_dim": 128, "ctx_max": 131072,
+      "quants": ["UD-Q3_K_XL", "UD-Q4_K_XL", "Q4_K_M", "Q6_K", "Q8_0"]
+    },
+    {
+      "id": "gpt-oss-20b", "name": "gpt-oss 20B", "org": "OpenAI · unsloth", "repo": "unsloth/gpt-oss-20b-GGUF", "release": "2025-08",
+      "desc": "OpenAI 开源 MoE，16G 显存就能流畅跑", "tags": ["对话", "推理", "编程"],
+      "params_b": 21, "active_b": 3.6, "layers": 24, "kv_heads": 8, "head_dim": 64,
+      "experts": 32, "experts_used": 4, "ctx_max": 131072,
+      "quants": ["Q4_K_M", "F16"], "size_gb": { "Q4_K_M": 11.6, "F16": 13.8 }
+    },
+    {
+      "id": "gpt-oss-120b", "name": "gpt-oss 120B", "org": "OpenAI · unsloth", "repo": "unsloth/gpt-oss-120b-GGUF", "release": "2025-08",
+      "desc": "OpenAI 开源大号 MoE，专家放内存也能跑出不错速度", "tags": ["对话", "推理", "编程"],
+      "params_b": 117, "active_b": 5.1, "layers": 36, "kv_heads": 8, "head_dim": 64,
+      "experts": 128, "experts_used": 4, "ctx_max": 131072,
+      "quants": ["Q4_K_M", "F16"], "size_gb": { "Q4_K_M": 62.8, "F16": 65.4 }
+    }
+  ]
+}
