@@ -19,6 +19,10 @@ fn physical(path: &Path) -> Result<PathBuf, String> {
                 out.pop();
             }
             Component::CurDir => {}
+            // "\\?\D:" 这类前缀与根目录分量在 Windows 上做 symlink_metadata 会返回
+            // os error 1（函数不正确），导致所有绝对路径解析失败；直接拼接即可，
+            // 只有真正落到文件系统的分量才需要探测重解析点。
+            Component::Prefix(_) | Component::RootDir => out.push(part.as_os_str()),
             _ => {
                 out.push(part.as_os_str());
                 match fs::symlink_metadata(&out) {
@@ -34,6 +38,14 @@ fn physical(path: &Path) -> Result<PathBuf, String> {
         return out.canonicalize().map_err(err);
     }
     Ok(out)
+}
+// 所有工具的统一边界守卫：解析后的真实路径必须仍然位于工作文件夹之内。
+// physical() 会解开符号链接与 ".."，因此这里比较的是最终落点，不是原始字符串。
+fn guard(root: &Path, path: PathBuf) -> Result<PathBuf, String> {
+    if !path.starts_with(root) {
+        return Err("路径不在工作文件夹内".into());
+    }
+    Ok(path)
 }
 pub(super) fn resolve(a: &Value) -> Reply {
     let root = Path::new(arg(a, "ws")?).canonicalize().map_err(err)?;
@@ -176,7 +188,7 @@ pub(super) fn run(ws: &Path, name: &str, a: &Value) -> Reply {
         return shell(&root, a);
     }
     let raw = root.join(a["path"].as_str().unwrap_or("."));
-    let path = physical(&raw)?;
+    let path = guard(&root, physical(&raw)?)?;
     match name {
         "list_files" | "search_files" => {
             let search = name == "search_files";
@@ -287,14 +299,19 @@ pub(super) fn run(ws: &Path, name: &str, a: &Value) -> Reply {
             if path == root || path.parent().is_none() {
                 return Err("不能删除工作文件夹或文件系统根目录".into());
             }
-            let ty = fs::symlink_metadata(&raw).map_err(err)?.file_type();
+            // 判定与执行必须作用于同一个已解析路径：原先用 raw 删除、
+            // 用 path 判定，遇到符号链接/目录联接或并发替换会删到边界之外。
+            let ty = fs::symlink_metadata(&path).map_err(err)?.file_type();
+            if ty.is_symlink() {
+                return Err("不能删除符号链接或目录联接".into());
+            }
             if ty.is_dir() {
-                fs::remove_dir_all(&raw)
+                fs::remove_dir_all(&path)
             } else {
-                fs::remove_file(&raw)
+                fs::remove_file(&path)
             }
             .map_err(err)?;
-            Ok(json!(format!("已删除 {}", raw.display())))
+            Ok(json!(format!("已删除 {}", path.display())))
         }
         _ => Err(format!("未知工具 {name}")),
     }
